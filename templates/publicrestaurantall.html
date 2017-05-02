@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+	{% include "header.html" %}
+	<div class ="text-center">
+		{% for i in restaurant %}
+			<a href='{{url_for('restaurantMenu', restaurant_id=i.id)}}'><h1>{{ i.name }}</h1></a>
+			<br><br><br>
+		{% endfor %}
+	</div>
+{% endblock %}

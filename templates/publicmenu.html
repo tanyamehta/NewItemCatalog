@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+
+    <div class='flash'>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+                <ul>
+                    {% for message in messages %}
+                        <li><strong> {{ message }} </strong></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <br>
+    
+    {% for i in items %}
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom: 10px">
+                <div style="color: white">
+
+                    <span class='name'>{{ i.name }}</span>
+                    <span class='price'>{{ i.price }}</span>
+                    <span class='course'>{{ i.course }}</span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

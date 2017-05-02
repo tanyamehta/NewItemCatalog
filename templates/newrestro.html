@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div class='pane'>
+        <form action="{{ url_for('newRestro') }}" method='post'>
+            <dl>
+                <dt style="color: white">Name:</dt>
+                <dd><input type='text' size='30' name='name'></dd>
+            </dl>
+            <button type='submit' class="btn btn-primary" > Create </button>
+        </form>
+    </div>
+{% endblock %}
